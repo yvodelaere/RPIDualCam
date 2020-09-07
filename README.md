@@ -22,9 +22,10 @@ The next step is to place the files inside the RPI folder of this repository on 
 Before the files can be placed onto the RPI, some changes should be made to the files:
 In all files inside the RPI folder (rpiSide, rpiSide_background, rpiSide_calibrate, rpiSide_operation), the following things should be changed:
 
-ip (line 107) should be set to the local IP address of the computer.
-framePort (line 108) should be 9600 for picam1, 9700 for picam2
-msgPort (line 109) should be 9700 for picam1, 9701 for picam2
+1. ip (line 107) should be set to the local IP address of the computer.
+2. framePort (line 108) should be 9600 for picam1, 9700 for picam2
+3. msgPort (line 109) should be 9700 for picam1, 9701 for picam2
+
 The files should be placed inside the folder 'home/Python' of both rpi's.
 
 Now, the system can be tested, by running the python script: PC/pcSide.py.
