@@ -1,4 +1,4 @@
-%% General overview
+# General overview
 This code provides a way to capture top view images using two side view images. 
 Images are captured using 2 Rapsberry Pi based camera systems and sended to computer over the network.
 The computer then generates a top view image from these received images.
@@ -9,7 +9,7 @@ Note that this code is far from perfect. It was constructed for prototype purpos
 Probably, you will need some help with setting up the system. For these questions, you can reach me at y.delaere@student.utwente.nl.
 A prerequisite for this to work is that you will need some experience with python programming, and some general knowledge about IT.
 
-%% Setting up the RPI cameras
+# Setting up the RPI cameras
 First, make sure the raspberry pi's can be reached by the computer using a SSH connection. As an SSH client I used 'putty'. The two systems were attached to the PC by means of a network switch. 
 Unfortunately, I am not sure what the password is of both RPI's anymore. Please try the following passwords: 1. buitenbar 2. Apollo2017 3. Apollo 4. picam1 5. picam2
 If these passwords do not work, please reflash the SD cards using the Raspberry Pi Imager which can be downloaded from here: https://www.raspberrypi.org/downloads/. As an OS, select the Raspberry Pi OS.
@@ -22,16 +22,17 @@ The next step is to place the files inside the RPI folder of this repository on 
 Before the files can be placed onto the RPI, some changes should be made to the files:
 In all files inside the RPI folder (rpiSide, rpiSide_background, rpiSide_calibrate, rpiSide_operation), the following things should be changed:
 
-ip (line 107) should be set to the local IP address of the computer.
-framePort (line 108) should be 9600 for picam1, 9700 for picam2
-msgPort (line 109) should be 9700 for picam1, 9701 for picam2
+1. ip (line 107) should be set to the local IP address of the computer.
+2. framePort (line 108) should be 9600 for picam1, 9700 for picam2
+3. msgPort (line 109) should be 9700 for picam1, 9701 for picam2
+
 The files should be placed inside the folder 'home/Python' of both rpi's.
 
 Now, the system can be tested, by running the python script: PC/pcSide.py.
 If evertything is correct, you can see the low quality livefeed from both cameras in your browser from http://picam1:8000/stream.mjpg and http://picam2:8000/stream.mjpg respectively.
 A high quality image can be captured by sending an 'x' character to the RPI's. This is done by typing an 'x' and then pressing the 'return' or 'enter' key on your keyboard. The system can be shut down by pressing ctrl + C in the terminal.
 
-%% How to run the system
+# How to run the system
 First, a checkerboard calibration pattern should be printed. A useful website for making a calibration pattern is here: https://calib.io/pages/camera-calibration-pattern-generator
 a checkerboard calibration pattern of 38x37 squares should be printed with 15mm squares. In the middlesquare of the pattern, a red circle should be drawn. I did this simply with a red permanent marker.
 In my own experiments, the calibration pattern was printed on a sheet of A0 paper. However, it is better to print this on a more rigid material. I suggest to print it on a material as foam.
@@ -52,7 +53,7 @@ Now, the following python scripts should be run:
 	Can be terminated using ctrl+c
 	
 	
-%% Classifying the beads
+# Classifying the beads
 The collected data from my time in Hungary can be downloaded from here: https://drive.google.com/file/d/1OJdgkXkxBFHEjM9S5dF6IftIiKFK3VtA/view?usp=sharing
 This data is available untill 1-11-2020 and will then be removed from the server. 
 Classification is performed using matlab. The different steps of classification are described in the paper.
